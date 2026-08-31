@@ -153,10 +153,13 @@ padding:18px;
 }
 
 .brand-logo{
-  display:inline-block;
-  width:auto;
+  display:block;
+  width:100%;
   max-width:78%;
   height:auto;
+  margin:0 auto;
+  mix-blend-mode:multiply;
+  opacity:.95;
   animation:logoFloat 5s ease-in-out infinite;
 }
 
