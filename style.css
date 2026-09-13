@@ -424,13 +424,13 @@ main{ position:relative; z-index:2; }
   .brand-logo{ max-width:85%; }
 }
 
-/* ================= قسم التواصل ================= */
+/* ================= قسم التواصل المحدث ================= */
 
 .contact-section {
   width: 100%;
   max-width: 390px;
-  margin: 35px auto 25px;
-  padding: 10px 18px 25px;
+  margin: 25px auto 15px;
+  padding: 10px 18px 20px;
   text-align: center;
 }
 
@@ -439,98 +439,63 @@ main{ position:relative; z-index:2; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-family: "Cairo", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
+  color: var(--color-brown);
 }
 
 .contact-line {
   width: 38px;
   height: 1px;
-  opacity: 0.45;
-  background: currentColor;
+  opacity: 0.35;
+  background: var(--color-brown);
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-card {
+/* حاوية الأيقونات لتكون بجانب بعضها في المنتصف */
+.social-icons-wrapper {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 13px 15px;
-  border-radius: 18px;
-  text-decoration: none;
-  color: inherit;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  justify-content: center;
+  gap: 15px;
 }
 
-.contact-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.contact-icon {
-  width: 45px;
-  height: 45px;
-  min-width: 45px;
+/* تنسيق الأيقونة الفردية (حجم صغير ودائري/مربع ناعم متناسق) */
+.social-icon-btn {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  background: var(--color-white);
+  border: 1.5px solid rgba(139, 90, 60, 0.2);
+  color: var(--color-brown);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  box-shadow: 0 4px 10px rgba(139, 90, 60, 0.06);
 }
 
-.contact-icon svg {
-  width: 24px;
-  height: 24px;
+.social-icon-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  line-height: 1.3;
-}
-
-.contact-info small {
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  opacity: 0.6;
-}
-
-.contact-info strong {
-  font-family: "Poppins", "Cairo", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  direction: ltr;
-}
-
-/* لمسة مختلفة لكل أيقونة */
-
-.phone-card .contact-icon {
-  background: rgba(237, 98, 55, 0.12);
-}
-
-.instagram-card .contact-icon {
-  background: rgba(210, 120, 150, 0.14);
-}
-
-.tiktok-card .contact-icon {
-  background: rgba(70, 70, 70, 0.10);
+/* تأثير التفاعل عند مرور الماوس أو اللمس (تتخذ لون البرتقالي الخاص بالمنيو) */
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--color-orange);
+  color: var(--color-white);
+  border-color: var(--color-orange);
+  box-shadow: 0 6px 15px rgba(255, 122, 41, 0.3);
 }
 
 .contact-footer {
-  margin: 18px 0 0;
+  margin: 15px 0 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
+  font-size: 16px;
   font-style: italic;
-  opacity: 0.65;
+  color: var(--color-brown);
+  opacity: 0.7;
 }
