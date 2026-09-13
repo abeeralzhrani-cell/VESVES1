@@ -382,6 +382,18 @@ main{ position:relative; z-index:2; }
   transform:translateY(-3px) scale(1.05);
   background:var(--color-orange-dark);
 }
+/* ================= سعرات الحلا ================= */
+
+.calories {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 1.5;
+  opacity: 0.65;
+  font-weight: 500;
+  direction: rtl;
+  white-space: nowrap;
+}
 
 .float-btn:active{ transform:scale(.94); }
 
