@@ -13,16 +13,24 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-  /* إزالة الفراغ أسفل الهيدر */
+  /* إزالة الفراغ أسفل الهيدر (بما فيه فراغ السطر الخفي أسفل الصورة) */
   .site-header {
     margin: 0 !important;
     padding-bottom: 0 !important;
+    line-height: 0 !important;
   }
-  
-  /* رفع كلمة القهوة الحارة وحدها للأعلى تحت الشعار مباشرة دون تداخل */
+  .brand-logo {
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* رفع كلمة القهوة الحارة لتكون مباشرة تحت الشعار دون فراغ أبيض */
   #hot-coffee {
-    margin-top: -30px !important;
+    margin-top: -45px !important;
     padding-top: 0 !important;
+  }
+  #hot-coffee .section-title {
+    margin-top: 0 !important;
   }
 
   /* ضبط المسافات الآمنة بين كل قسم والقسم التالي لمنع أي تداخل */
@@ -32,10 +40,10 @@
     clear: both !important;
   }
 
-  /* موازنة عناوين الأقسام ومسافاتها عن المنتجات */
+  /* موازنة عناوين الأقسام ومسافة واضحة بينها وبين المنتجات أسفلها */
   .section-title {
     text-align: center !important;
-    margin: 10px auto 16px auto !important;
+    margin: 10px auto 20px auto !important;
     display: block !important;
   }
 
@@ -48,48 +56,50 @@
     box-sizing: border-box !important;
   }
 
-  /* توحيد خط المحاذاة لكل المنتجات دون شذوذ */
+  /* عمودان ثابتان لكل المنتجات: الاسم يمين والسعر يسار على نفس الخط دائماً،
+     بعرض ثابت لا يتغير حسب طول النص، ومسافة مضبوطة بينهما بالمنتصف دون خروج عن الإطار */
   .menu-item {
-    display: flex !important;
-    justify-content: space-between !important;
+    display: grid !important;
+    grid-template-columns: 202px 78px !important;
+    column-gap: 12px !important;
+    justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
     padding: 10px 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* خط ثابت للأسماء على اليمين */
+  /* عمود الأسماء: محاذاة يمين ثابتة لكل المنتجات على نفس الخط العمودي */
   .item-text {
-    flex: 0 0 60% !important;
     text-align: right !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: flex-end !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* خط ثابت للأسعار على اليسار */
+  /* عمود الأسعار: محاذاة يسار ثابتة لكل المنتجات على نفس الخط العمودي */
   .price {
-    flex: 0 0 40% !important;
     text-align: left !important;
     white-space: nowrap !important;
     font-weight: 600 !important;
     box-sizing: border-box !important;
   }
 
-  /* أسعار القهوة اليوم (تحت بعض بخط متناسق) */
+  /* أسعار قهوة اليوم: صغير فوق، خط فاصل خفيف، كبير تحت */
   .stacked-price {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-end !important;
-    gap: 2px !important;
+    gap: 3px !important;
   }
 
   .price-divider {
     width: 35px;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.15);
-    margin: 1px 0;
+    margin: 2px 0;
   }
 </style>
 </head>
