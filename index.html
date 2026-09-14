@@ -13,41 +13,39 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-  /* إزالة الفراغ الضخم أسفل الشعار */
+  /* رفع عنوان القهوة الحارة وإزالة الفراغ أسفل الشعار */
   .site-header {
     margin-bottom: 0 !important;
-    padding-bottom: 5px !important;
+    padding-bottom: 0 !important;
   }
   
-  /* عناوين الأقسام والمسافة المناسبة بينها وبين المشروبات */
   .menu-section {
     margin-top: 0 !important;
-    padding-top: 10px !important;
-    margin-bottom: 25px !important;
+    padding-top: 5px !important;
+    margin-bottom: 24px !important;
   }
   
   .section-title {
     text-align: center !important;
-    margin: 5px auto 18px auto !important; /* مسافة واضحة ومناسبة تحت العنوان */
+    margin: 5px auto 16px auto !important;
   }
 
-  /* تنظيم القائمة وحمايتها من الخروج عن الحدود */
+  /* تحديد عرض ملموم للقائمة بالمنتصف لتقليل الفراغ بين الاسم والسعر */
   .menu-list {
-    max-width: 360px !important; /* ملمومة في الوسط دون تباعد مبالغ */
+    max-width: 270px !important;
     margin: 0 auto !important;
-    padding: 0 10px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* الاسم في جهة والسعر في الجهة المقابلة */
+  /* الاسم في جهة والسعر في الجهة المقابلة بمسافة متناسقة دون تباعد واسع */
   .menu-item {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    text-align: right !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    gap: 16px !important;
     padding: 10px 0 !important;
+    box-sizing: border-box !important;
   }
 
   .item-text {
@@ -55,6 +53,7 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    flex: 1 !important;
   }
 
   .price {
@@ -269,7 +268,6 @@
   </ul>
 
 </section>
-
 
 <!-- ================= قهوة باردة ================= -->
 <section id="cold-coffee" class="menu-section" data-section="cold-coffee">
