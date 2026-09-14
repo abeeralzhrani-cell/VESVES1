@@ -150,8 +150,10 @@ padding:18px;
   z-index: 2;
   text-align: center;
   padding: 0 !important;
-  margin: -18px -18px 0 -18px !important; /* يلغي الحواشي الجانبية لإطار الصفحة ليصبح اللوجو بعرض الشاشة الكامل */
+  margin: -18px -18px 0 -18px !important;
   width: calc(100% + 36px);
+  line-height: 0; /* يمنع وجود أي فراغ ناتج عن أبعاد الصورة */
+  font-size: 0;
 }
 
 .brand-logo{
