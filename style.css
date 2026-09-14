@@ -144,28 +144,24 @@ padding:18px;
   .doodle{ animation:none; }
 }
 
-/* ---------- 6) الهيدر ---------- */
+/* ---------- 6) الهيدر الكامل ---------- */
 .site-header{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  padding:20px 20px 10px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 !important;
+  margin: -18px -18px 0 -18px !important; /* يلغي الحواشي الجانبية لإطار الصفحة ليصبح اللوجو بعرض الشاشة الكامل */
+  width: calc(100% + 36px);
 }
 
 .brand-logo{
-  display:block;
-  width:100%;
-  max-width:78%;
-  height:auto;
-  margin:0 auto;
-  mix-blend-mode:multiply;
-  opacity:.95;
-  animation:logoFloat 5s ease-in-out infinite;
-}
-
-@keyframes logoFloat{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(-5px); }
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto;
+  margin: 0 !important;
+  border-radius: 0;
+  animation: none;
 }
 
 /* ---------- 7) الأقسام ---------- */
