@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VES VES | Coffee Menu</title>
+
+<!-- Google Fonts: Cairo للعربي / Poppins للإنجليزي -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* إزالة الفراغ أسفل الهيدر (بما فيه فراغ السطر الخفي أسفل الصورة) */
+  .site-header {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 0 !important;
+  }
+  .brand-logo {
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* رفع كلمة القهوة الحارة لتكون مباشرة تحت الشعار دون فراغ أبيض */
+  #hot-coffee {
+    margin-top: -45px !important;
+    padding-top: 0 !important;
+  }
+  #hot-coffee .section-title {
+    margin-top: 0 !important;
+  }
+
+  /* ضبط المسافات الآمنة بين كل قسم والقسم التالي لمنع أي تداخل */
+  .menu-section {
+    margin-bottom: 30px !important;
+    padding-top: 10px !important;
+    clear: both !important;
+  }
+
+  /* موازنة عناوين الأقسام ومسافة واضحة بينها وبين المنتجات أسفلها */
+  .section-title {
+    text-align: center !important;
+    margin: 10px auto 20px auto !important;
+    display: block !important;
+  }
+
+  /* توحيد حاوية القائمة لكامل المنيو */
+  .menu-list {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* عمودان ثابتان لكل المنتجات: الاسم يمين والسعر يسار على نفس الخط دائماً،
+     بعرض ثابت لا يتغير حسب طول النص، ومسافة مضبوطة بينهما بالمنتصف دون خروج عن الإطار */
+  .menu-item {
+    display: grid !important;
+    grid-template-columns: 202px 78px !important;
+    column-gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* عمود الأسماء: محاذاة يمين ثابتة لكل المنتجات على نفس الخط العمودي */
+  .item-text {
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* عمود الأسعار: محاذاة يسار ثابتة لكل المنتجات على نفس الخط العمودي */
+  .price {
+    text-align: left !important;
+    white-space: nowrap !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* أسعار قهوة اليوم: صغير فوق، خط فاصل خفيف، كبير تحت */
+  .stacked-price {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 3px !important;
+  }
+
+  .price-divider {
+    width: 35px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin: 2px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- إطار الصفحة الرئيسي (Mobile First - 430px) -->
+<div class="page-frame">
+
+  <!-- نجوم ولمعات زخرفية -->
+  <span class="sparkle sparkle--1" aria-hidden="true">✦</span>
+  <span class="sparkle sparkle--2" aria-hidden="true">✧</span>
+  <span class="sparkle sparkle--3" aria-hidden="true">✦</span>
+
+  <!-- ================= رسومات زخرفية متناثرة خلف المحتوى ================= -->
+  <div class="bg-doodles" aria-hidden="true">
+    <img src="icons/deco-latte-cup.png"     class="doodle d-1"  alt="">
+    <img src="icons/deco-croissant.png"     class="doodle d-2"  alt="">
+    <img src="icons/deco-milk-jug.png"      class="doodle d-3"  alt="">
+    <img src="icons/deco-togo-cup.png"      class="doodle d-4"  alt="">
+    <img src="icons/deco-wrapped-bread.png" class="doodle d-5"  alt="">
+    <img src="icons/deco-cinnamon-roll.png" class="doodle d-6"  alt="">
+    <img src="icons/deco-bundt-cake.png"    class="doodle d-7"  alt="">
+    <img src="icons/deco-moka-pot.png"      class="doodle d-8"  alt="">
+    <img src="icons/deco-cherry-roll.png"   class="doodle d-9"  alt="">
+    <img src="icons/deco-iced-latte.png"    class="doodle d-10" alt="">
+    <img src="icons/deco-croissant.png"     class="doodle d-11" alt="">
+    <img src="icons/deco-latte-cup.png"     class="doodle d-12" alt="">
+  </div>
+
+<!-- ================= الهيدر ================= -->
+<header class="site-header">
+    <img src="MENU.png" alt="VES VES — Menu" class="brand-logo" />
+</header>
+
+<!-- ================= قسم المشروبات ================= -->
+<main>
+
+<!-- ================= قهوة حارة ================= -->
+<section id="hot-coffee" class="menu-section" data-section="hot-coffee">
+
+  <h2 class="section-title sticky-title">القهوة الحارة</h2>
+
+  <ul class="menu-list">
+
+    <!-- 1. قهوة اليوم في المقدمة -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">قهوة اليوم</span>
+        <span class="name-en">Coffee Of The Day</span>
+        <span class="calories">صغير: 3 سعرة | كبير: 5 سعرة</span>
+      </div>
+      <span class="price stacked-price">
+        <span>صغير 6<span class="currency">ر.س</span></span>
+        <span class="price-divider"></span>
+        <span>كبير 8<span class="currency">ر.س</span></span>
+      </span>
+    </li>
+
+    <!-- 2. باقي القهوة السوداء والبلاك -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">أمريكانو</span>
+        <span class="name-en">Americano</span>
+        <span class="calories">3 سعرات</span>
+      </div>
+      <span class="price">5<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">V60</span>
+        <span class="name-en">V60</span>
+        <span class="calories">3 سعرات</span>
+      </div>
+      <span class="price">10<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">اسبريسو</span>
+        <span class="name-en">Espresso</span>
+        <span class="calories">3 سعرات</span>
+      </div>
+      <span class="price">7.9<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">قهوة تركي</span>
+        <span class="name-en">Turkish Coffee</span>
+        <span class="calories">10 سعرات</span>
+      </div>
+      <span class="price">6.8<span class="currency">ر.س</span></span>
+    </li>
+
+    <!-- 3. مشروبات الحليب (من الأصغر للأكبر) -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ميكاتو</span>
+        <span class="name-en">Macchiato</span>
+        <span class="calories">25 سعرة</span>
+      </div>
+      <span class="price">9<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">كورتادو</span>
+        <span class="name-en">Cortado</span>
+        <span class="calories">70 سعرة</span>
+      </div>
+      <span class="price">9<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">كابتشينو</span>
+        <span class="name-en">Cappuccino</span>
+        <span class="calories">90 سعرة</span>
+      </div>
+      <span class="price">10<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">فلات وايت</span>
+        <span class="name-en">Flat White</span>
+        <span class="calories">100 سعرة</span>
+      </div>
+      <span class="price">9<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">لاتيه</span>
+        <span class="name-en">Latte</span>
+        <span class="calories">120 سعرة</span>
+      </div>
+      <span class="price">10<span class="currency">ر.س</span></span>
+    </li>
+
+    <!-- 4. المشروبات المحلاة والنكهات الأخرى -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">سبانيش لاتيه</span>
+        <span class="name-en">Spanish Latte</span>
+        <span class="calories">190 سعرة</span>
+      </div>
+      <span class="price">10<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">موكا</span>
+        <span class="name-en">Mocha Coffee</span>
+        <span class="calories">190 سعرة</span>
+      </div>
+      <span class="price">9.11<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">هوت شوكلت</span>
+        <span class="name-en">hot Chocolate</span>
+        <span class="calories">210 سعرة</span>
+      </div>
+      <span class="price">9.11<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ماتشا</span>
+        <span class="name-en">Matcha</span>
+        <span class="calories">150 سعرة</span>
+      </div>
+      <span class="price">12<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">قهوة فرنسي</span>
+        <span class="name-en">French Coffee</span>
+        <span class="calories">80 سعرة</span>
+      </div>
+      <span class="price">9.11<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">قهوة ايطالي</span>
+        <span class="name-en">Italian Coffee</span>
+        <span class="calories">80 سعرة</span>
+      </div>
+      <span class="price">9.11<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">نسكافيه</span>
+        <span class="name-en">Nescafe</span>
+        <span class="calories">60 سعرة</span>
+      </div>
+      <span class="price">4.5<span class="currency">ر.س</span></span>
+    </li>
+
+  </ul>
+
+</section>
+
+
+<!-- ================= قهوة باردة ================= -->
+<section id="cold-coffee" class="menu-section" data-section="cold-coffee">
+
+  <h2 class="section-title sticky-title">القهوة الباردة</h2>
+
+  <ul class="menu-list">
+
+    <!-- 1. قهوة اليوم في المقدمة -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">قهوة اليوم</span>
+        <span class="name-en">Coffee Of The Day</span>
+        <span class="calories">صغير: 3 سعرات | كبير: 5 سعرات</span>
+      </div>
+      <span class="price stacked-price">
+        <span>صغير 6<span class="currency">ر.س</span></span>
+        <span class="price-divider"></span>
+        <span>كبير 8<span class="currency">ر.س</span></span>
+      </span>
+    </li>
+
+    <!-- 2. باقي البلاك والقهوة السوداء الباردة -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايس أمريكانو</span>
+        <span class="name-en">Americano</span>
+        <span class="calories">3 سعرات</span>
+      </div>
+      <span class="price">9<span class="currency">ر.س</span></span>
+    </li>
+    
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">V60</span>
+        <span class="name-en">V60</span>
+        <span class="calories">3 سعرات</span>
+      </div>
+      <span class="price">11<span class="currency">ر.س</span></span>
+    </li>
+
+    <!-- 3. مشروبات الحليب الباردة -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايس لاتيه</span>
+        <span class="name-en">Iced Latte</span>
+        <span class="calories">120 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايس لاتيه كراميل</span>
+        <span class="name-en">Caramel Latte</span>
+        <span class="calories">170 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايس سبانش لاتيه</span>
+        <span class="name-en">Spanish Latte</span>
+        <span class="calories">190 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <!-- 4. المشروبات الأخرى والنكهات الباردة -->
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">كركديه</span>
+        <span class="name-en">Hibiscus</span>
+        <span class="calories">60 سعرة</span>
+      </div>
+      <span class="price">7.50<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ماتشا</span>
+        <span class="name-en">Matcha</span>
+        <span class="calories">150 سعرة</span>
+      </div>
+      <span class="price">16<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">موكا</span>
+        <span class="name-en">Mocha Coffee</span>
+        <span class="calories">190 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايس تشوكلت</span>
+        <span class="name-en">Chocolate</span>
+        <span class="calories">210 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ايطالي</span>
+        <span class="name-en">Italian Coffee</span>
+        <span class="calories">80 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">فرنسي</span>
+        <span class="name-en">French Coffee</span>
+        <span class="calories">80 سعرة</span>
+      </div>
+      <span class="price">12.13<span class="currency">ر.س</span></span>
+    </li>
+
+  </ul>
+
+</section>
+
+<!-- ================= قسم الحلويات ================= -->
+<section id="dessert" class="menu-section" data-section="dessert">
+  <h2 class="section-title sticky-title">الحلا</h2>
+
+  <ul class="menu-list">
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">بودينق الاوريو</span>
+        <span class="name-en">Oreo Pudding</span>
+        <span class="calories">388 سعرة حرارية / 100 جم</span>
+      </div>
+      <span class="price">12<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">بودينق الكرز</span>
+        <span class="name-en">Cherry Pudding</span>
+        <span class="calories">418 سعرة حرارية / 100 جم</span>
+      </div>
+      <span class="price">12<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">بودينق الشوكلت</span>
+        <span class="name-en">Chocolate Pudding</span>
+        <span class="calories">388 سعرة حرارية / 100 جم</span>
+      </div>
+      <span class="price">12<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">كيكة لندن</span>
+        <span class="name-en">London Cake</span>
+        <span class="calories">372 سعرة حرارية / 100 جم</span>
+      </div>
+      <span class="price">14<span class="currency">ر.س</span></span>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ================= الشاي ================= -->
+<section id="tea" class="menu-section" data-section="tea">
+
+  <h2 class="section-title sticky-title">الشاي</h2>
+
+  <ul class="menu-list">
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ليبتون</span>
+        <span class="name-en">Lipton</span>
+        <span class="calories">2 سعرات</span>
+      </div>
+      <span class="price">2.3<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">انجليزي احمر</span>
+        <span class="name-en">English Red Tea</span>
+        <span class="calories">2 سعرات</span>
+      </div>
+      <span class="price">4.5<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">اخضر</span>
+        <span class="name-en">Green Tea</span>
+        <span class="calories">2 سعرات</span>
+      </div>
+      <span class="price">4.5<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">كرك</span>
+        <span class="name-en">Karak</span>
+        <span class="calories">120 سعرة</span>
+      </div>
+      <span class="price">5.7<span class="currency">ر.س</span></span>
+    </li>
+
+  </ul>
+
+</section>
+
+<!-- ================= الموهيتو ================= -->
+<section id="mojito" class="menu-section" data-section="mojito">
+
+  <h2 class="section-title sticky-title">الموهيتو</h2>
+
+  <ul class="menu-list">
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar"> سفن اب</span>
+        <span class="name-en">7UP</span>
+        <span class="calories">150 سعرة</span>
+      </div>
+      <span class="price">15.12<span class="currency">ر.س</span></span>
+    </li>
+
+    <li class="menu-item reveal">
+      <div class="item-text">
+        <span class="name-ar">ريتا</span>
+        <span class="name-en">Rita</span>
+        <span class="calories">150 سعرة</span>
+      </div>
+      <span class="price">15.12<span class="currency">ر.س</span></span>
+    </li>
+
+  </ul>
+
+</section>
+
+<!-- ================= مسببات الحساسية ================= -->
+<div class="reveal allergy-notice">
+  <p>
+    <span>مسببات الحساسية</span>
+    تحتوي بعض منتجاتنا على منتجات الألبان والجلوتين، وقد تحتوي على آثار للمكسرات. يرجى إبلاغ الكاشير عند الطلب.
+  </p>
+</div>
+
+    <!-- ================= رسمة القطة والقهوة ================= -->
+    <figure class="menu-illustration reveal">
+      <div class="pour-scene">
+        <img src="cat-coffee.png" alt="رسمة قطة بجانب طقم تحضير قهوة V60 وكوب قهوة" loading="lazy">
+        <span class="steam steam-1" aria-hidden="true"></span>
+        <span class="steam steam-2" aria-hidden="true"></span>
+        <span class="steam steam-3" aria-hidden="true"></span>
+      </div>
+    </figure>
+
+  </main>
+
+<!-- ================= التواصل ================= -->
+<section class="contact-section reveal">
+
+  <div class="contact-title">
+    <span class="contact-line"></span>
+    <span>تواصل معنا</span>
+    <span class="contact-line"></span>
+  </div>
+
+  <div class="social-icons-wrapper">
+
+    <!-- رقم التواصل -->
+    <a href="tel:0533085445" class="social-icon-btn phone-btn" aria-label="اتصال">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.6 2.8 4.5 3.9c-.8.4-1.2 1.3-.9 2.2 1.7 6.1 6.2 10.6 12.3 12.3.9.3 1.8-.1 2.2-.9l1.1-2.1c.3-.6.1-1.3-.4-1.7l-2.5-1.8c-.5-.4-1.2-.3-1.6.2l-1 1.2c-2.3-1.1-4.2-3-5.3-5.3l1.2-1c.5-.4.6-1.1.2-1.6L8.3 3.2c-.4-.5-1.1-.7-1.7-.4Z"
+          fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <!-- انستقرام -->
+    <a href="https://www.instagram.com/vesvas2026/" target="_blank" rel="noopener" class="social-icon-btn instagram-btn" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="17.3" cy="6.8" r="1.1" fill="currentColor"/>
+      </svg>
+    </a>
+
+    <!-- تيك توك -->
+    <a href="https://www.tiktok.com/@vesvas2026" target="_blank" rel="noopener" class="social-icon-btn tiktok-btn" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 4v9.2a4.8 4.8 0 1 1-3.4-4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 4c.7 2.1 2.1 3.4 4.2 3.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <p class="contact-footer">Ves Ves Coffee ✦</p>
+
+</section>
+
+  <!-- ================= الزر العائم ================= -->
+  <button id="floatBtn" class="float-btn" type="button" aria-label="انتقل للقسم التالي">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="floatBtnIcon" d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+	
