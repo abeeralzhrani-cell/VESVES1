@@ -12,24 +12,55 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- التعديل المطلوب فقط: محاذاة للأعلى وتوسيط باقي الكلام دون تغيير بالألوان أو التصميم -->
 <style>
-  #hot-coffee .section-title {
-    margin-top: -15px !important;
-    text-align: center !important;
+  /* إزالة الفراغ الضخم أسفل الشعار */
+  .site-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 5px !important;
   }
+  
+  /* عناوين الأقسام والمسافة المناسبة بينها وبين المشروبات */
+  .menu-section {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    margin-bottom: 25px !important;
+  }
+  
+  .section-title {
+    text-align: center !important;
+    margin: 5px auto 18px auto !important; /* مسافة واضحة ومناسبة تحت العنوان */
+  }
+
+  /* تنظيم القائمة وحمايتها من الخروج عن الحدود */
+  .menu-list {
+    max-width: 360px !important; /* ملمومة في الوسط دون تباعد مبالغ */
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* الاسم في جهة والسعر في الجهة المقابلة */
   .menu-item {
-    text-align: center !important;
-    justify-content: center !important;
-    flex-direction: column !important;
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    gap: 4px !important;
+    text-align: right !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px 0 !important;
   }
+
   .item-text {
-    text-align: center !important;
+    text-align: right !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
+  }
+
+  .price {
+    white-space: nowrap !important;
+    text-align: left !important;
+    font-weight: 600;
   }
 </style>
 </head>
@@ -66,15 +97,11 @@
 
 <!-- ================= قسم المشروبات ================= -->
 <main>
+
 <!-- ================= قهوة حارة ================= -->
-<section id="hot-coffee" class="menu-section" data-section="hot-coffee" style="padding-top: 0;">
+<section id="hot-coffee" class="menu-section" data-section="hot-coffee">
 
-  <h2 class="section-title sticky-title" style="margin-top: 0;">القهوة الحارة</h2>
-
-  <ul class="menu-list" style="margin-top: 0;">
-    <!-- باقي العناصر -->
-  </ul>
-</section>
+  <h2 class="section-title sticky-title">القهوة الحارة</h2>
 
   <ul class="menu-list">
 
@@ -87,7 +114,7 @@
       </div>
       <span class="price">
         صغير 6<span class="currency">ر.س</span>
-        &nbsp; | &nbsp;
+        &nbsp;|&nbsp;
         كبير 8<span class="currency">ر.س</span>
       </span>
     </li>
@@ -260,7 +287,7 @@
       </div>
       <span class="price">
         صغير 6<span class="currency">ر.س</span>
-        &nbsp; | &nbsp;
+        &nbsp;|&nbsp;
         كبير 8<span class="currency">ر.س</span>
       </span>
     </li>
@@ -371,71 +398,50 @@
 
 </section>
 
-      <!-- ================= قسم الحلويات ================= -->
+<!-- ================= قسم الحلويات ================= -->
 <section id="dessert" class="menu-section" data-section="dessert">
   <h2 class="section-title sticky-title">الحلا</h2>
 
   <ul class="menu-list">
 
-    <!-- بودينق الأوريو -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">بودينق الاوريو</span>
         <span class="name-en">Oreo Pudding</span>
         <span class="calories">388 سعرة حرارية / 100 جم</span>
       </div>
-
-      <span class="price">
-        12<span class="currency">ر.س</span>
-      </span>
+      <span class="price">12<span class="currency">ر.س</span></span>
     </li>
 
-
-    <!-- بودينق الكرز -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">بودينق الكرز</span>
         <span class="name-en">Cherry Pudding</span>
         <span class="calories">418 سعرة حرارية / 100 جم</span>
       </div>
-
-      <span class="price">
-        12<span class="currency">ر.س</span>
-      </span>
+      <span class="price">12<span class="currency">ر.س</span></span>
     </li>
 
-
-    <!-- بودينق الشوكلت -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">بودينق الشوكلت</span>
         <span class="name-en">Chocolate Pudding</span>
         <span class="calories">388 سعرة حرارية / 100 جم</span>
       </div>
-
-      <span class="price">
-        12<span class="currency">ر.س</span>
-      </span>
+      <span class="price">12<span class="currency">ر.س</span></span>
     </li>
 
-
-    <!-- كيكة لندن -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">كيكة لندن</span>
         <span class="name-en">London Cake</span>
         <span class="calories">372 سعرة حرارية / 100 جم</span>
       </div>
-
-      <span class="price">
-        14<span class="currency">ر.س</span>
-      </span>
+      <span class="price">14<span class="currency">ر.س</span></span>
     </li>
 
   </ul>
 </section>
-
-
 
 <!-- ================= الشاي ================= -->
 <section id="tea" class="menu-section" data-section="tea">
@@ -513,7 +519,7 @@
 
 </section>
 
-<!-- ================= مسببات الحساسية (مدمجة مع الخلفية) ================= -->
+<!-- ================= مسببات الحساسية ================= -->
 <div class="reveal allergy-notice">
   <p>
     <span>مسببات الحساسية</span>
@@ -521,7 +527,7 @@
   </p>
 </div>
 
-    <!-- ================= رسمة القطة والقهوة (فاصل بعد قسم الحلا) ================= -->
+    <!-- ================= رسمة القطة والقهوة ================= -->
     <figure class="menu-illustration reveal">
       <div class="pour-scene">
         <img src="cat-coffee.png" alt="رسمة قطة بجانب طقم تحضير قهوة V60 وكوب قهوة" loading="lazy">
