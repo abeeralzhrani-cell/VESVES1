@@ -13,64 +13,80 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-  /* إزالة أي مساحة فارغة أسفل الشعار */
+  /* إزالة الفراغ أسفل الهيدر */
   .site-header {
     margin: 0 !important;
-    padding: 0 !important;
+    padding-bottom: 0 !important;
   }
   
-  /* رفع كلمة القهوة الحارة للأعلى مكان الإشارة */
-  #hot-coffee .section-title {
-    position: relative !important;
-    top: auto !important;
-    transform: translateY(-45px) !important; /* رفع إجباري للأعلى */
-    margin: 0 auto !important;
-    text-align: center !important;
+  /* رفع كلمة القهوة الحارة وحدها للأعلى تحت الشعار مباشرة دون تداخل */
+  #hot-coffee {
+    margin-top: -30px !important;
+    padding-top: 0 !important;
   }
 
-  /* تحديد المسافة الدقيقة بين الخطين الأحمرين في الصورة */
+  /* ضبط المسافات الآمنة بين كل قسم والقسم التالي لمنع أي تداخل */
+  .menu-section {
+    margin-bottom: 30px !important;
+    padding-top: 10px !important;
+    clear: both !important;
+  }
+
+  /* موازنة عناوين الأقسام ومسافاتها عن المنتجات */
+  .section-title {
+    text-align: center !important;
+    margin: 10px auto 16px auto !important;
+    display: block !important;
+  }
+
+  /* توحيد حاوية القائمة لكامل المنيو */
   .menu-list {
-    width: 205px !important; /* يطابق مكان الخطين بدقة */
-    max-width: 205px !important;
+    width: 100% !important;
+    max-width: 320px !important;
     margin: 0 auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
-    transform: translateY(-25px) !important; /* موازاة القائمة مع رفع العنوان */
   }
 
-  /* الاسم عند الخط الأيمن والسعر عند الخط الأيسر */
+  /* توحيد خط المحاذاة لكل المنتجات دون شذوذ */
   .menu-item {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    padding: 8px 0 !important;
+    padding: 10px 0 !important;
     box-sizing: border-box !important;
   }
 
+  /* خط ثابت للأسماء على اليمين */
   .item-text {
+    flex: 0 0 60% !important;
     text-align: right !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    box-sizing: border-box !important;
   }
 
+  /* خط ثابت للأسعار على اليسار */
   .price {
-    white-space: nowrap !important;
+    flex: 0 0 40% !important;
     text-align: left !important;
-    font-weight: 600;
+    white-space: nowrap !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
   }
 
-  /* ترتيب صغير وكبير تحت بعض */
+  /* أسعار القهوة اليوم (تحت بعض بخط متناسق) */
   .stacked-price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 2px !important;
   }
 
   .price-divider {
-    width: 22px;
+    width: 35px;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.15);
     margin: 1px 0;
@@ -118,7 +134,7 @@
 
   <ul class="menu-list">
 
-    <!-- 1. قهوة اليوم -->
+    <!-- 1. قهوة اليوم في المقدمة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">قهوة اليوم</span>
@@ -283,6 +299,7 @@
 
 </section>
 
+
 <!-- ================= قهوة باردة ================= -->
 <section id="cold-coffee" class="menu-section" data-section="cold-coffee">
 
@@ -290,6 +307,7 @@
 
   <ul class="menu-list">
 
+    <!-- 1. قهوة اليوم في المقدمة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">قهوة اليوم</span>
@@ -303,6 +321,7 @@
       </span>
     </li>
 
+    <!-- 2. باقي البلاك والقهوة السوداء الباردة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">ايس أمريكانو</span>
@@ -321,6 +340,7 @@
       <span class="price">11<span class="currency">ر.س</span></span>
     </li>
 
+    <!-- 3. مشروبات الحليب الباردة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">ايس لاتيه</span>
@@ -348,6 +368,7 @@
       <span class="price">12.13<span class="currency">ر.س</span></span>
     </li>
 
+    <!-- 4. المشروبات الأخرى والنكهات الباردة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">كركديه</span>
