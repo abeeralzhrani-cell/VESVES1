@@ -168,8 +168,8 @@ padding:18px;
 main{ position:relative; z-index:2; }
 
 .menu-section{
-  position:relative;
-  padding: 0 20px 8px; /* جعلنا المسافة العلوية صفر لدمج العنوان مع القسم السابق */
+  position: relative;
+  padding: 0 20px 12px;
 }
 
 /* عنوان القسم الثابت أثناء التمرير */
@@ -497,4 +497,25 @@ main{ position:relative; z-index:2; }
   font-style: italic;
   color: var(--color-brown);
   opacity: 0.7;
+}
+/* ---------- مسببات الحساسية ---------- */
+.allergy-notice {
+  text-align: center;
+  padding: 25px 15px;
+  margin: 10px 0;
+}
+.allergy-notice p {
+  font-family: var(--font-ar);
+  font-size: 12px;
+  color: var(--color-orange-dark);
+  line-height: 1.8;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+.allergy-notice span {
+  display: block;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-bottom: 4px;
+  font-size: 13px;
 }
