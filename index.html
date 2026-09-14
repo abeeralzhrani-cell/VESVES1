@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-  /* ضبط وتوسيط الشعار بالمنتصف تماماً دون ميلان */
+  /* ضبط وتوسيط الشعار بالمنتصف */
   .site-header {
     display: flex !important;
     justify-content: center !important;
@@ -29,26 +29,43 @@
     margin: 0 auto !important;
   }
   
-  /* رفع عنوان القهوة الحارة للأعلى تحت الشعار مباشرة */
+  /* رفع كلمة القهوة الحارة للأعلى */
   #hot-coffee {
-    margin-top: -28px !important;
+    margin-top: -32px !important;
     padding-top: 0 !important;
   }
 
-  /* موازنة الأقسام والعناوين لمنع أي تداخل */
+  /* موازنة الأقسام */
   .menu-section {
     margin-bottom: 30px !important;
     padding-top: 10px !important;
     clear: both !important;
   }
 
+  /* إصلاح تفكك الحروف ورفع العنوان بمسافة سطرين مع الفاصل الجمالي */
   .section-title {
+    font-family: 'Cairo', sans-serif !important;
+    letter-spacing: normal !important; /* حل مشكلة تقطع الحروف العربية نهائياً */
+    word-spacing: normal !important;
     text-align: center !important;
-    margin: 10px auto 16px auto !important;
-    display: block !important;
+    margin: 0 auto 22px auto !important; /* مسافة سطرين تفصل العنوان عن المنتجات */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
 
-  /* حاوية القائمة ملمومة في المنتصف */
+  /* خط فاصل جمالي بلون التصميم أسفل العنوان */
+  .section-title::after {
+    content: '' !important;
+    display: block !important;
+    width: 90px !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #e67e3a, transparent) !important;
+    border-radius: 2px !important;
+  }
+
+  /* حاوية القائمة الملمومة بنفس ترتيبك الممتاز */
   .menu-list {
     width: fit-content !important;
     max-width: 280px !important;
@@ -57,27 +74,30 @@
     box-sizing: border-box !important;
   }
 
-  /* ترتيب الأعمدة: الكلام في اليمين والأسعار في اليسار */
+  /* ترتيب الأعمدة: الكلام يمين والأسعار يسار */
   .menu-item {
     display: grid !important;
-    grid-template-columns: 160px auto !important; /* عمود الاسم يمين وعمود السعر يسار */
-    column-gap: 24px !important;                 /* المسافة المحددة والدقيقة بينهما */
+    grid-template-columns: 160px auto !important;
+    column-gap: 24px !important;
     align-items: center !important;
     width: 100% !important;
     padding: 9px 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* الاسم محاذى لليمين */
   .item-text {
     order: 1 !important;
     text-align: right !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    letter-spacing: normal !important;
   }
 
-  /* السعر محاذى لليسار */
+  .item-text .name-ar {
+    letter-spacing: normal !important;
+  }
+
   .price {
     order: 2 !important;
     text-align: left !important;
@@ -86,7 +106,7 @@
     justify-self: end !important;
   }
 
-  /* تنسيق أسعار قهوة اليوم تحت بعض */
+  /* أسعار قهوة اليوم تحت بعض */
   .stacked-price {
     display: flex !important;
     flex-direction: column !important;
