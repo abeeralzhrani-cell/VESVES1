@@ -169,7 +169,7 @@ main{ position:relative; z-index:2; }
 
 .menu-section{
   position:relative;
-  padding:2px 20px 12px;
+  padding: 0 20px 8px; /* جعلنا المسافة العلوية صفر لدمج العنوان مع القسم السابق */
 }
 
 /* عنوان القسم الثابت أثناء التمرير */
@@ -188,7 +188,8 @@ main{ position:relative; z-index:2; }
   letter-spacing:2px;
   text-transform:uppercase;
   color:var(--color-orange-dark);
-  padding:10px 4px 8px;
+  padding:8px 4px 6px;
+  margin:0;
   width:100%;
 }
 
@@ -207,7 +208,7 @@ main{ position:relative; z-index:2; }
 
 /* ---------- 8) عناصر القائمة ---------- */
 .menu-list{
-  margin-top:2px;
+  margin-top: 0px; /* إزالة أي مسافة فوق القائمة */
 }
 
 .menu-item{
