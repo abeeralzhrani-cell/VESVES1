@@ -13,37 +13,32 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-  /* رفع عنوان القهوة الحارة وإزالة الفراغ أسفل الشعار */
+  /* رفع كلمة القهوة الحارة للأعلى مكان الدائرة */
   .site-header {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
   
-  .menu-section {
-    margin-top: 0 !important;
-    padding-top: 5px !important;
-    margin-bottom: 24px !important;
-  }
-  
-  .section-title {
+  #hot-coffee .section-title {
+    margin-top: -35px !important;
+    margin-bottom: 12px !important;
     text-align: center !important;
-    margin: 5px auto 16px auto !important;
   }
 
-  /* تحديد عرض ملموم للقائمة بالمنتصف لتقليل الفراغ بين الاسم والسعر */
+  /* توحيد عرض القائمة لتطابق مكان قهوة اليوم */
   .menu-list {
-    max-width: 270px !important;
+    width: 100% !important;
+    max-width: 330px !important;
     margin: 0 auto !important;
-    padding: 0 !important;
+    padding: 0 10px !important;
     box-sizing: border-box !important;
   }
 
-  /* الاسم في جهة والسعر في الجهة المقابلة بمسافة متناسقة دون تباعد واسع */
+  /* الاسم في أقصى يمين المحاذاة والسعر في مقابلها */
   .menu-item {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 16px !important;
     padding: 10px 0 !important;
     box-sizing: border-box !important;
   }
@@ -53,13 +48,27 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    flex: 1 !important;
   }
 
   .price {
     white-space: nowrap !important;
     text-align: left !important;
     font-weight: 600;
+  }
+
+  /* تنسيق أسعار صغير وكبير تحت بعض مع سطر صغير بينهما */
+  .stacked-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .price-divider {
+    width: 25px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin: 1px 0;
   }
 </style>
 </head>
@@ -104,17 +113,17 @@
 
   <ul class="menu-list">
 
-    <!-- 1. قهوة اليوم في المقدمة -->
+    <!-- 1. قهوة اليوم (صغير وكبير تحت بعض مع سطر صغير بينهما) -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">قهوة اليوم</span>
         <span class="name-en">Coffee Of The Day</span>
         <span class="calories">صغير: 3 سعرة | كبير: 5 سعرة</span>
       </div>
-      <span class="price">
-        صغير 6<span class="currency">ر.س</span>
-        &nbsp;|&nbsp;
-        كبير 8<span class="currency">ر.س</span>
+      <span class="price stacked-price">
+        <span>صغير 6<span class="currency">ر.س</span></span>
+        <span class="price-divider"></span>
+        <span>كبير 8<span class="currency">ر.س</span></span>
       </span>
     </li>
 
@@ -276,17 +285,17 @@
 
   <ul class="menu-list">
 
-    <!-- 1. قهوة اليوم في المقدمة -->
+    <!-- 1. قهوة اليوم الباردة -->
     <li class="menu-item reveal">
       <div class="item-text">
         <span class="name-ar">قهوة اليوم</span>
         <span class="name-en">Coffee Of The Day</span>
         <span class="calories">صغير: 3 سعرات | كبير: 5 سعرات</span>
       </div>
-      <span class="price">
-        صغير 6<span class="currency">ر.س</span>
-        &nbsp;|&nbsp;
-        كبير 8<span class="currency">ر.س</span>
+      <span class="price stacked-price">
+        <span>صغير 6<span class="currency">ر.س</span></span>
+        <span class="price-divider"></span>
+        <span>كبير 8<span class="currency">ر.س</span></span>
       </span>
     </li>
 
