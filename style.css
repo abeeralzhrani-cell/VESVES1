@@ -521,3 +521,17 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
+
+/* تعديل تقليل المسافة تحت الصورة لتلصق بقسم القهوة الحارة */
+.site-header {
+  margin-bottom: -15px !important;
+}
+
+#hot-coffee {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#hot-coffee .sticky-title {
+  margin-top: 0 !important;
+}
