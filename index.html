@@ -31,7 +31,7 @@
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
-    margin: 15px auto 25px auto !important; /* مسافة طبيعية وموزونة للأعلى والأسفل */
+    margin: 15px auto 15px auto !important; 
     padding: 0 !important;
   }
 
@@ -43,37 +43,37 @@
     height: auto !important;
   }
   
-  /* بداية قسم القهوة الحارة بمسافة طبيعية تمنع حشر النصوص */
   #hot-coffee {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
+  /* 1. تقليل المسافات الفاصلة بين الأقسام وبعضها */
   .menu-section {
-    margin-bottom: 30px !important;
-    padding-top: 10px !important;
+    margin-bottom: 15px !important; 
+    padding-top: 5px !important;
     clear: both !important;
   }
 
-  /* العناوين فقط: جعلها بولد عريض وبارز مع الفاصل الجمالي */
+  /* 2. تقليل المسافة بين عنوان القسم (مثل القهوة الحارة) وتحته أول عنصر على طول */
   .section-title {
     font-family: 'Cairo', sans-serif !important;
     font-weight: 800 !important;
     letter-spacing: normal !important;
     word-spacing: normal !important;
     text-align: center !important;
-    margin: 0 auto 22px auto !important;
+    margin: 0 auto 6px auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 4px !important;
   }
 
   .section-title::after {
     content: '' !important;
     display: block !important;
     width: 90px !important;
-    height: 2.5px !important;
+    height: 2px !important;
     background: linear-gradient(90deg, transparent, #e67e3a, transparent) !important;
     border-radius: 2px !important;
   }
@@ -87,14 +87,14 @@
     box-sizing: border-box !important;
   }
 
-  /* توزيع الأعمدة: المحاذاة الدقيقة الثابتة */
+  /* 3. تقليل المسافات العمودية بين عناصر القهوة نفسها لتتراص باكتضاظ */
   .menu-item {
     display: grid !important;
     grid-template-columns: 160px auto !important;
     column-gap: 24px !important;
     align-items: center !important;
     width: 100% !important;
-    padding: 9px 0 !important;
+    padding: 4px 0 !important;
     box-sizing: border-box !important;
   }
 
