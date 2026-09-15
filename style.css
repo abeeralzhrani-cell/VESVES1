@@ -521,17 +521,12 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
-
-/* تعديل تقليل المسافة تحت الصورة لتلصق بقسم القهوة الحارة */
-.site-header {
-  margin-bottom: -15px !important;
-}
-
+/* سحب قسم القهوة الحارة للأعلى بشكل قوي لإلغاء الفراغ */
 #hot-coffee {
-  margin-top: 0 !important;
+  margin-top: -350px !important; /* يمكنك تقليل أو زيادة هذا الرقم حتى ترتفع القهوة وتلصق تماماً تحت الشعار */
   padding-top: 0 !important;
 }
 
-#hot-coffee .sticky-title {
-  margin-top: 0 !important;
+.site-header {
+  margin-bottom: 0 !important;
 }
