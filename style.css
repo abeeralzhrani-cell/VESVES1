@@ -528,3 +528,16 @@ main{ position:relative; z-index:2; }
   margin: 0 auto !important;
   display: block !important;
 }
+/* ================= تغيير لون مسببات الحساسية بدون خلفية ================= */
+.allergy-notice {
+  background: transparent !important; /* إلغاء أي خلفية ليكون مدموجاً تماماً */
+  box-shadow: none !important;
+}
+
+.allergy-notice span {
+  color: var(--color-orange-dark) !important; /* لون برتقالي دافئ للعنوان */
+}
+
+.allergy-notice p {
+  color: var(--color-brown) !important; /* لون بني دافئ ومريح للنص */
+}
