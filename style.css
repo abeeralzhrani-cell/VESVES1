@@ -521,22 +521,31 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
-/* التركيز على أسفل الصورة ليظهر اللوجو وسحب قسم القهوة للأعلى */
+/* ================= تعديل الهيدر وإلغاء المسافة تحته مباشرة ================= */
 .site-header {
-  max-height: 120px !important;
-  overflow: hidden !important;
-  margin-bottom: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 0 0 0 !important; /* مسافة بسيطة جداً من الأعلى لكي لا يلصق الشعار بإطار الصفحة تماماً */
+  background: transparent !important;
 }
 
 .brand-logo {
-  object-fit: cover !important;
-  object-position: bottom center !important; /* التعديل هنا: يترك أسفل الصورة يظهر (حيث يوجد اللوجو) ويقص الفراغ العلوي */
-  height: 120px !important;               
-  margin-top: -150px !important;          /* سحب الصورة للأعلى لتبدأ من اللوجو مباشرة */
+  width: 55% !important;     /* تكبير حجم الشعار ليصبح بارزاً وواضحاً (يمكنك تعديل النسبة لو أردتِ أكبر) */
+  max-width: 220px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
 }
 
-/* إلغاء أي مسافة لقسم القهوة الحارة ليلتصق تحت اللوجو تماماً */
+/* سحب قسم القهوة الحارة للأعلى ليصبح لاصقاً تماماً تحت الشعار بدون مسافات */
 #hot-coffee {
-  margin-top: 0 !important;
+  margin-top: -20px !important;  /* يزيل أي مسافة فاصلة ويجعل القهوة تحت الشعار مباشرة */
   padding-top: 0 !important;
+}
+
+#hot-coffee .sticky-title {
+  margin-top: 0 !important;
 }
