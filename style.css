@@ -521,9 +521,9 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
-/* سحب قسم القهوة الحارة للأعلى بشكل قوي لإلغاء الفراغ */
+/* رفع قسم القهوة الحارة للأعلى أكثر لإلغاء الفراغ تماماً */
 #hot-coffee {
-  margin-top: -350px !important; /* يمكنك تقليل أو زيادة هذا الرقم حتى ترتفع القهوة وتلصق تماماً تحت الشعار */
+  margin-top: -550px !important; 
   padding-top: 0 !important;
 }
 
