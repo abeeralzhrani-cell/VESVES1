@@ -521,3 +521,10 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
+.brand-logo {
+  width: 75% !important;     /* زيدي النسبة (مثلاً من 55% إلى 75% لتكبر الصورة) */
+  max-width: 280px !important; /* زيدي الحد الأقصى للعرض لكي تسمح بتكبيرها */
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
