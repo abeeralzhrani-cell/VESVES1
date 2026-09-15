@@ -521,12 +521,21 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
-/* رفع قسم القهوة الحارة للأعلى أكثر لإلغاء الفراغ تماماً */
-#hot-coffee {
-  margin-top: -550px !important; 
-  padding-top: 0 !important;
+/* قص الفراغ الزائد من أسفل الشعار وسحب المنيو للأعلى مباشرة */
+.site-header {
+  max-height: 120px !important; /* يتحكم بظهور أقصى ارتفاع للهيدر */
+  overflow: hidden !important;   /* يخفي أي مساحة سوداء فارغة أسفل الشعار داخل الصورة نفسها */
+  margin-bottom: 0 !important;
 }
 
-.site-header {
-  margin-bottom: 0 !important;
+.brand-logo {
+  object-fit: cover !important;
+  object-position: top center !important; /* يركز على الشعار من الأعلى ويقص الفراغ الأسفل */
+  height: 120px !important;               /* ضبط ارتفاع الشعار ليصبح مناسباً ونظيفاً */
+}
+
+/* إلغاء أي مسافة علوية لقسم القهوة الحارة ليلتصق تماماً */
+#hot-coffee {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
