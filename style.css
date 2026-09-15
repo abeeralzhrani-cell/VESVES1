@@ -541,9 +541,3 @@ main{ position:relative; z-index:2; }
 .allergy-notice p {
   color: var(--color-brown) !important; /* لون بني دافئ ومريح للنص */
 }
-/* ================= تكبير صورة النهاية (القطة والقهوة) ================= */
-.menu-illustration .pour-scene img {
-  width: 75% !important; /* يمكنك زيادة هذه النسبة إذا أردتِ تكبيرها أكثر (مثلاً 85% أو 90%) */
-  max-width: 320px !important; /* الحد الأقصى للعرض لكي تبقى متناسقة مع إطار الجوال */
-  height: auto !important;
-}
