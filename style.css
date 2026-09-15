@@ -522,8 +522,8 @@ main{ position:relative; z-index:2; }
   font-size: 13px;
 }
 .brand-logo {
-  width: 75% !important;     /* زيدي النسبة (مثلاً من 55% إلى 75% لتكبر الصورة) */
-  max-width: 280px !important; /* زيدي الحد الأقصى للعرض لكي تسمح بتكبيرها */
+  width: 90% !important;        /* <--- ارفعي النسبة هنا لتكبر الصورة بالنسبة التي ترغبين بها */
+  max-width: 350px !important;  /* <--- ارفعي الحد الأقصى للعرض لكي تسمح بالتكبير */
   height: auto !important;
   margin: 0 auto !important;
   display: block !important;
