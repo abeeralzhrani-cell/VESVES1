@@ -521,20 +521,21 @@ main{ position:relative; z-index:2; }
   margin-bottom: 4px;
   font-size: 13px;
 }
-/* قص الفراغ الزائد من أسفل الشعار وسحب المنيو للأعلى مباشرة */
+/* التركيز على أسفل الصورة ليظهر اللوجو وسحب قسم القهوة للأعلى */
 .site-header {
-  max-height: 120px !important; /* يتحكم بظهور أقصى ارتفاع للهيدر */
-  overflow: hidden !important;   /* يخفي أي مساحة سوداء فارغة أسفل الشعار داخل الصورة نفسها */
+  max-height: 120px !important;
+  overflow: hidden !important;
   margin-bottom: 0 !important;
 }
 
 .brand-logo {
   object-fit: cover !important;
-  object-position: top center !important; /* يركز على الشعار من الأعلى ويقص الفراغ الأسفل */
-  height: 120px !important;               /* ضبط ارتفاع الشعار ليصبح مناسباً ونظيفاً */
+  object-position: bottom center !important; /* التعديل هنا: يترك أسفل الصورة يظهر (حيث يوجد اللوجو) ويقص الفراغ العلوي */
+  height: 120px !important;               
+  margin-top: -150px !important;          /* سحب الصورة للأعلى لتبدأ من اللوجو مباشرة */
 }
 
-/* إلغاء أي مسافة علوية لقسم القهوة الحارة ليلتصق تماماً */
+/* إلغاء أي مسافة لقسم القهوة الحارة ليلتصق تحت اللوجو تماماً */
 #hot-coffee {
   margin-top: 0 !important;
   padding-top: 0 !important;
